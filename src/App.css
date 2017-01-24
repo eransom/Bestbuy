@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+.App-header {
+  background-color: #003b64;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.productSearch {
+  margin-top: 30px;
+}
+
+
+li {
+  list-style: none;
+}
+
+.name {
+}
+
+.listImg {
+  height: auto;
+  width: 120px;
+}
+
+.listing1 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.delete {
+  background-color: red;
+}
