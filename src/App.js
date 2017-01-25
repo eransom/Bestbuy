@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import logo from './best-buy-logo.svg';
+// import List from './List'
 import './App.css';
 import {Link} from 'react-router';
 
@@ -10,12 +11,6 @@ constructor () {
    super()
    this.state = {
      products: []
-
-    //  name: "",
-    //  image: "",
-    //  price: "",
-    //  model: "",
-    //  description: ""
    }
  }
 
@@ -34,8 +29,7 @@ constructor () {
 
  searchProduct(){
    let productSearch = this.searchInput.value
-   axios.get(`http://localhost:3030/products?name[$like]=${productSearch}`).then(response => this.setState({
-     search: this.searchInput.value,
+   axios.get(`http://localhost:3030/products?name[$like]=*{productSearch}*`).then(response => this.setState({
      products: response.data.data
    }))
  }
@@ -65,7 +59,7 @@ constructor () {
           <div className="product-list">
             <ul>
               <li className="name">{product.name}</li>
-              <li><img className="listImg" src={product.image}/></li>
+              <li><img className="listImg" src={product.image} alt="listing"/></li>
               <li className="price">{product.price}</li>
               <li className="name">{product.model}</li>
               <li className="name">{product.id}</li>
